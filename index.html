@@ -3,8 +3,60 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Sharitta Marshall | Career Villain | UGC Creator</title>
-<meta name="description" content="UGC creator, app builder, and radio host. Work Well. Live Better. No Apologies."/>
+<title>Sharitta Marshall | UGC Creator | Career Villain | Phoenix, AZ</title>
+<meta name="description" content="Sharitta Marshall is a 40+ Black women UGC creator, leadership development strategist, app builder, and WJZD Radio host based in Phoenix, AZ. Work Well. Live Better. No Apologies."/>
+<meta name="keywords" content="UGC creator, influencer marketing, brand partnerships, personal development, professional development, Black women content creator, 40+ Black women content creator, Black women over 40, TikTok creator, Phoenix Arizona, career strategist, app builder, midlife content creator"/>
+<meta name="author" content="Sharitta Marshall"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://sharittamarshall.com"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://sharittamarshall.com"/>
+<meta property="og:title" content="Sharitta Marshall | UGC Creator | Career Villain"/>
+<meta property="og:description" content="40+ Black women UGC creator, app builder, and WJZD Radio host helping professionals work smarter and live better. Available for brand partnerships."/>
+<meta property="og:image" content="https://sharittamarshall.com/assets/hero.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:site_name" content="Sharitta Marshall"/>
+<meta property="og:locale" content="en_US"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:url" content="https://sharittamarshall.com"/>
+<meta name="twitter:title" content="Sharitta Marshall | UGC Creator | Career Villain"/>
+<meta name="twitter:description" content="UGC creator, app builder, and radio host. Work Well. Live Better. No Apologies."/>
+<meta name="twitter:image" content="https://sharittamarshall.com/assets/hero.jpg"/>
+<meta name="twitter:creator" content="@sharittamarshall"/>
+
+<!-- Structured Data: Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sharitta Marshall",
+  "jobTitle": "UGC Creator, Strategist, App Builder",
+  "description": "40+ Black women UGC creator and personal and professional development content creator who uses AI to make life easier for professionals.",
+  "url": "https://sharittamarshall.com",
+  "image": "https://sharittamarshall.com/assets/hero.jpg",
+  "email": "sharitta.marshall818@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Phoenix",
+    "addressRegion": "AZ",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://tiktok.com/@herdivinealchemy",
+    "https://instagram.com/sharittamarshall",
+    "https://impactweaverapp.com"
+  ],
+  "brand": {
+    "@type": "Brand",
+    "name": "Career Villain"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -250,13 +302,29 @@ footer{background:var(--pd);padding:28px 52px;display:flex;justify-content:space
 #photogrid{background:var(--wh);padding:0 52px 100px}
 .grid-label{font-family:var(--fu);font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--pm);margin-bottom:20px;display:flex;align-items:center;gap:10px}
 .grid-label::before{content:'';width:24px;height:1px;background:var(--pm)}
-.pgrid-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:start}
-.gi{overflow:hidden;border-radius:6px;background:var(--pale)}
-.gi-tall{grid-row:span 2}
-.gi img{width:100%;height:auto;display:block;transition:transform .4s}
-.gi:hover img{transform:scale(1.02)}
-@media(max-width:1024px){#photogrid{padding:0 24px 72px}.pgrid-wrap{grid-template-columns:repeat(2,1fr);.gi-tall{grid-row:span 1}}
-@media(max-width:640px){.pgrid-wrap{grid-template-columns:1fr;.gi{aspect-ratio:unset;position:relative}}
+.pgrid-wrap{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:300px 300px;gap:10px}
+.gi{overflow:hidden;border-radius:6px;background:var(--pale);height:100%}
+.gi img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .4s}
+.gi:hover img{transform:scale(1.03)}
+.gi-tall{grid-column:1;grid-row:1 / 3}
+.pgrid-wrap .gi:nth-child(2){grid-column:2;grid-row:1}
+.pgrid-wrap .gi:nth-child(3){grid-column:3;grid-row:1}
+.pgrid-wrap .gi:nth-child(4){grid-column:2;grid-row:2}
+.pgrid-wrap .gi:nth-child(5){grid-column:3;grid-row:2}
+.pgrid-wrap .gi.reveal{opacity:1;transform:none}
+@media(max-width:1024px){
+  #photogrid{padding:0 24px 72px}
+  .pgrid-wrap{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
+  .gi-tall,
+  .pgrid-wrap .gi:nth-child(2),
+  .pgrid-wrap .gi:nth-child(3),
+  .pgrid-wrap .gi:nth-child(4),
+  .pgrid-wrap .gi:nth-child(5){grid-column:auto;grid-row:auto}
+  .gi{height:300px}
+}
+@media(max-width:640px){
+  .pgrid-wrap{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -304,7 +372,7 @@ footer{background:var(--pd);padding:28px 52px;display:flex;justify-content:space
       <div class="fback"></div>
       <div class="fbox">
         <!-- Add your photo: uncomment and replace the path below -->
-        <img src="./assets/hero.jpg" alt="Sharitta Marshall"/>
+        <img src="./assets/hero.jpg" alt="Sharitta Marshall professional photo"/>
       </div>
       <div class="sbadge">
         <div class="sbn">4.8%</div>
@@ -373,19 +441,19 @@ footer{background:var(--pd);padding:28px 52px;display:flex;justify-content:space
   <div class="grid-label">Life in Motion</div>
   <div class="pgrid-wrap">
     <div class="gi gi-tall reveal">
-      <img src="./assets/grid-1.jpg" alt="Sharitta Marshall lifestyle"/>
+      <img src="./assets/grid-1.jpg" alt="Sharitta Marshall content creator lifestyle photo"/>
     </div>
     <div class="gi reveal" style="transition-delay:.08s">
       <img src="./assets/grid-2.jpg" alt="Sharitta Marshall lifestyle"/>
     </div>
     <div class="gi reveal" style="transition-delay:.12s">
-      <img src="./assets/grid-3.jpg" alt="Sharitta Marshall travel"/>
+      <img src="./assets/grid-3.jpg" alt="Sharitta Marshall travel content creator"/>
     </div>
     <div class="gi reveal" style="transition-delay:.16s">
       <img src="./assets/grid-4.jpg" alt="Sharitta Marshall"/>
     </div>
     <div class="gi reveal" style="transition-delay:.2s">
-      <img src="./assets/grid-5.jpg" alt="Sharitta Marshall travel"/>
+      <img src="./assets/grid-5.jpg" alt="Sharitta Marshall travel lifestyle content"/>
     </div>
   </div>
 </section>
@@ -420,8 +488,8 @@ footer{background:var(--pd);padding:28px 52px;display:flex;justify-content:space
     <div class="pillar reveal" style="transition-delay:.24s">
       <div class="pnum">04</div>
       <div class="pico">🥂</div>
-      <div class="ptit">Sips Without the Hangover</div>
-      <p class="pdesc">Beverages worth talking about. Unique drinks and sips that elevate the moment.</p>
+      <div class="ptit">The Villain’s Beverage</div>
+      <p class="pdesc">Intentional drinks for a well-lived life. From everyday staples to elevated finds, this is how the Villain drinks.</p>
       <span class="parr">View Content →</span>
     </div>
   </div>
