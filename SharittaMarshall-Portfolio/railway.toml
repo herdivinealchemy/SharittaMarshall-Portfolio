@@ -1,0 +1,6 @@
+# railway.toml
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "npx serve . -p $PORT"
