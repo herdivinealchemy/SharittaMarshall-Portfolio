@@ -201,6 +201,8 @@ h2 em{font-style:italic;color:var(--pm)}
 /* WORK */
 #work{background:var(--wh)}
 .wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:44px}
+.wlink{display:block;text-decoration:none;color:inherit;height:100%}
+.wlink .wcard{height:100%}
 .wcard{background:var(--bg);border:1.5px solid var(--bdr);border-radius:6px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
 .wcard:hover{border-color:var(--pm);box-shadow:0 8px 28px rgba(75,26,140,.1)}
 .wthumb{aspect-ratio:9/16;background:var(--pale);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
@@ -302,13 +304,29 @@ footer{background:var(--pd);padding:28px 52px;display:flex;justify-content:space
 #photogrid{background:var(--wh);padding:0 52px 100px}
 .grid-label{font-family:var(--fu);font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--pm);margin-bottom:20px;display:flex;align-items:center;gap:10px}
 .grid-label::before{content:'';width:24px;height:1px;background:var(--pm)}
-.pgrid-wrap{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:300px 300px;gap:10px}
-.gi{overflow:hidden;border-radius:6px;background:var(--pale)}
-.gi img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;transition:transform .4s}
+.pgrid-wrap{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:300px 300px;gap:10px}
+.gi{overflow:hidden;border-radius:6px;background:var(--pale);height:100%}
+.gi img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .4s}
 .gi:hover img{transform:scale(1.03)}
 .gi-tall{grid-column:1;grid-row:1 / 3}
-@media(max-width:1024px){#photogrid{padding:0 24px 72px}.pgrid-wrap{grid-template-columns:repeat(2,1fr);.gi-tall{grid-row:span 1}}
-@media(max-width:640px){.pgrid-wrap{grid-template-columns:1fr;.gi{aspect-ratio:unset;position:relative}}
+.pgrid-wrap .gi:nth-child(2){grid-column:2;grid-row:1}
+.pgrid-wrap .gi:nth-child(3){grid-column:3;grid-row:1}
+.pgrid-wrap .gi:nth-child(4){grid-column:2;grid-row:2}
+.pgrid-wrap .gi:nth-child(5){grid-column:3;grid-row:2}
+.pgrid-wrap .gi.reveal{opacity:1;transform:none}
+@media(max-width:1024px){
+  #photogrid{padding:0 24px 72px}
+  .pgrid-wrap{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
+  .gi-tall,
+  .pgrid-wrap .gi:nth-child(2),
+  .pgrid-wrap .gi:nth-child(3),
+  .pgrid-wrap .gi:nth-child(4),
+  .pgrid-wrap .gi:nth-child(5){grid-column:auto;grid-row:auto}
+  .gi{height:300px}
+}
+@media(max-width:640px){
+  .pgrid-wrap{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -356,7 +374,7 @@ footer{background:var(--pd);padding:28px 52px;display:flex;justify-content:space
       <div class="fback"></div>
       <div class="fbox">
         <!-- Add your photo: uncomment and replace the path below -->
-        <img src="./assets/hero.jpg" alt="Sharitta Marshall professional photo"/
+        <img src="./assets/hero.jpg" alt="Sharitta Marshall professional photo"/>
       </div>
       <div class="sbadge">
         <div class="sbn">4.8%</div>
@@ -425,19 +443,19 @@ footer{background:var(--pd);padding:28px 52px;display:flex;justify-content:space
   <div class="grid-label">Life in Motion</div>
   <div class="pgrid-wrap">
     <div class="gi gi-tall reveal">
-      <img src="./assets/grid-1.jpg" alt="Sharitta Marshall content creator lifestyle photo"/
+      <img src="./assets/grid-1.jpg" alt="Sharitta Marshall content creator lifestyle photo"/>
     </div>
     <div class="gi reveal" style="transition-delay:.08s">
       <img src="./assets/grid-2.jpg" alt="Sharitta Marshall lifestyle"/>
     </div>
     <div class="gi reveal" style="transition-delay:.12s">
-      <img src="./assets/grid-3.jpg" alt="Sharitta Marshall travel content creator"/
+      <img src="./assets/grid-3.jpg" alt="Sharitta Marshall travel content creator"/>
     </div>
     <div class="gi reveal" style="transition-delay:.16s">
       <img src="./assets/grid-4.jpg" alt="Sharitta Marshall"/>
     </div>
     <div class="gi reveal" style="transition-delay:.2s">
-      <img src="./assets/grid-5.jpg" alt="Sharitta Marshall travel lifestyle content"/
+      <img src="./assets/grid-5.jpg" alt="Sharitta Marshall travel lifestyle content"/>
     </div>
   </div>
 </section>
@@ -472,8 +490,8 @@ footer{background:var(--pd);padding:28px 52px;display:flex;justify-content:space
     <div class="pillar reveal" style="transition-delay:.24s">
       <div class="pnum">04</div>
       <div class="pico">🥂</div>
-      <div class="ptit">Sips Without the Hangover</div>
-      <p class="pdesc">Beverages worth talking about. Unique drinks and sips that elevate the moment.</p>
+      <div class="ptit">The Villain’s Beverage</div>
+      <p class="pdesc">Intentional drinks for a well-lived life. From everyday staples to elevated finds, this is how the Villain drinks.</p>
       <span class="parr">View Content →</span>
     </div>
   </div>
@@ -532,12 +550,12 @@ footer{background:var(--pd);padding:28px 52px;display:flex;justify-content:space
 <section id="work">
   <div class="stag">Portfolio</div>
   <h2>Recent <em>Work</em></h2>
-  <p class="sint">Replace each card below with a screenshot from your best TikToks and link directly to the live video.</p>
+  <p class="sint">UGC video content, brand partnerships, and static shoots.</p>
   <div class="wgrid">
-    <a href="https://www.tiktok.com/@herdivinealchemy/video/7226426411882433834" target="_blank" rel="noreferrer" style="text-decoration:none;color:inherit;display:block">
+    <a href="https://www.tiktok.com/@herdivinealchemy/video/7226426411882433834" target="_blank" rel="noreferrer" class="wlink">
     <div class="wcard reveal">
       <div class="wthumb">
-        <div class="wph"><span>🎯</span><p>The Career Villain Life</p></div>
+        <img src="./assets/work-career.jpg" alt="The Career Villain Life TikTok video" style="width:100%;height:100%;object-fit:cover;object-position:top;"/>
         <div class="wplay"><div class="playbtn"><svg width="14" height="16" viewBox="0 0 14 16" fill="white"><path d="M1 1l12 7L1 15V1z"/></svg></div></div>
       </div>
       <div class="winfo">
@@ -547,10 +565,10 @@ footer{background:var(--pd);padding:28px 52px;display:flex;justify-content:space
       </div>
     </div>
     </a>
-    <a href="https://www.instagram.com/reel/DX5Gi2zSxJh/" target="_blank" rel="noreferrer" style="text-decoration:none;color:inherit;display:block">
+    <a href="https://www.instagram.com/reel/DX5Gi2zSxJh/" target="_blank" rel="noreferrer" class="wlink">
     <div class="wcard reveal" style="transition-delay:.1s">
       <div class="wthumb">
-        <div class="wph" style="background:var(--pale)"><span>🌿</span><p>O'Kra Water Ambassador Reel</p></div>
+        <img src="./assets/work-okra.jpg" alt="O'Kra Water brand ambassador Instagram reel" style="width:100%;height:100%;object-fit:cover;object-position:top;"/>
         <div class="wplay"><div class="playbtn"><svg width="14" height="16" viewBox="0 0 14 16" fill="white"><path d="M1 1l12 7L1 15V1z"/></svg></div></div>
       </div>
       <div class="winfo">
